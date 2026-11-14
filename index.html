@@ -159,6 +159,30 @@ main{flex:1;display:flex;min-height:0;position:relative}
 #import-msg{font-size:12px;white-space:pre-wrap;max-height:110px;overflow:auto}
 #import-msg.err{color:var(--rose)}#import-msg.ok{color:var(--emerald)}
 .kanban-note{font-size:10px;color:var(--text-subtle);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap}
+.header-actions{display:flex;align-items:center;gap:8px}
+.account-btn{display:flex;align-items:center;gap:6px;background:var(--primary-subtle);border:1px solid var(--primary-border);color:var(--primary);border-radius:6px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer}
+.account-btn:hover{filter:brightness(.97)}
+.account-dot{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.account-modal-box{width:min(480px,94vw);padding:22px;gap:14px}
+.account-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.account-card{background:var(--surface-subtle);border:2px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;color:var(--text);transition:border-color .15s,transform .1s}
+.account-card:hover{border-color:var(--primary);transform:translateY(-1px)}
+.account-card.active{border-color:var(--primary);background:var(--primary-subtle)}
+.account-avatar{width:38px;height:38px;border-radius:10px;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.account-name{font-size:16px;font-weight:800}
+.account-stats{font-size:11px;font-family:var(--font-mono);color:var(--text-muted);line-height:1.5}
+.note-modal-box{width:min(560px,94vw);padding:18px;gap:12px}
+.note-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid var(--border-subtle);padding-bottom:10px}
+.note-type-badge{display:inline-block;font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:4px;margin-bottom:4px;color:#fff}
+.note-modal-sub{font-size:12px;color:var(--text-muted);margin-top:2px}
+.note-modal-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;color:var(--text-subtle)}
+.note-modal-box textarea{min-height:240px;font-family:var(--font-sans);font-size:13px;line-height:1.55;padding:10px}
+.note-modal-status{font-size:11px;color:var(--text-subtle);font-family:var(--font-mono)}
+.btn-note-trigger{font-size:10px;font-family:var(--font-mono);font-weight:700;padding:2px 7px;border-radius:4px;background:var(--primary-subtle);border:1px solid var(--primary-border);color:var(--primary);cursor:pointer}
+.btn-note-trigger:hover{background:var(--primary);color:#fff}
+.btn-kanban-notes{color:var(--primary)!important;font-weight:600}
+.btn-drawer-note{background:#1e293b;color:#93c5fd;border:1px solid #334155;font-size:11px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;display:none;align-items:center;gap:4px}
+.btn-drawer-note:hover{background:#334155;color:#fff}
 </style>
 </head>
 <body>
@@ -174,8 +198,11 @@ main{flex:1;display:flex;min-height:0;position:relative}
     <button class="tab-btn" data-tab="supervisors">Supervisors <span class="tab-count" id="count-supervisors">0</span></button>
     <button class="tab-btn" data-tab="tracker">Tracker <span class="tab-count" id="count-tracker">0</span></button>
   </nav>
-  <button id="add-btn" class="btn-filter-trigger" title="Add entries in bulk">＋ Add</button>
-  <button id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme">◐</button>
+  <div class="header-actions">
+    <button id="account-btn" class="account-btn" title="Switch local account"><span class="account-dot"></span><span id="account-label">Select Account</span></button>
+    <button id="add-btn" class="btn-filter-trigger" title="Add entries in bulk">＋ Add</button>
+    <button id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme">◐</button>
+  </div>
 </header>
 
 <div class="filter-bar">
@@ -250,6 +277,42 @@ main{flex:1;display:flex;min-height:0;position:relative}
     </div>
   </div>
 </div>
+<div id="account-modal" class="modal" style="z-index:2500">
+  <div class="modal-box account-modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2>Choose Local Account</h2>
+      <button id="account-modal-close" class="btn-kanban" style="font-size:16px;display:none" title="Close">✕</button>
+    </div>
+    <p>Each local account maintains its own separate tracker pipeline, dates, and entity notes in this browser.</p>
+    <div id="account-grid" class="account-grid"></div>
+  </div>
+</div>
+
+<div id="note-modal" class="modal" style="z-index:2200">
+  <div class="modal-box note-modal-box">
+    <div class="note-modal-head">
+      <div>
+        <span id="nm-type" class="note-type-badge"></span>
+        <h2 id="nm-title"></h2>
+        <div id="nm-sub" class="note-modal-sub"></div>
+      </div>
+      <button id="nm-close-x" class="btn-kanban" style="font-size:16px" title="Close">✕</button>
+    </div>
+    <div class="note-modal-meta">
+      <span id="nm-stage" class="tag stage-badge"></span>
+      <span id="nm-account" class="tag"></span>
+    </div>
+    <textarea id="nm-input" placeholder="Write separate notes for this tracked entity (emails sent, key papers, interview prep, questions to ask)…"></textarea>
+    <div id="nm-status" class="note-modal-status">Autosaves as you type</div>
+    <div class="modal-actions">
+      <button id="nm-clear" class="btn-filter-trigger" style="color:var(--rose)">Clear note</button>
+      <button id="nm-details" class="btn-filter-trigger">Open Details</button>
+      <span class="spacer"></span>
+      <button id="nm-save-close" class="btn-filter-trigger btn-primary">Save & Close</button>
+    </div>
+  </div>
+</div>
+
 <div id="drawer-overlay" class="drawer-overlay">
   <div class="drawer">
     <div class="drawer-head">
@@ -259,6 +322,7 @@ main{flex:1;display:flex;min-height:0;position:relative}
       <div class="drawer-sub" id="d-uni"></div>
       <div class="drawer-actions">
         <a id="d-apply-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-drawer-pri">Apply / Portal ↗</a>
+        <button id="d-note-window-btn" class="btn-drawer-note">📝 Note Window</button>
         <button id="d-remove-stage-btn" class="btn-remove-stage-drawer">🗑 Remove from Stage</button>
       </div>
     </div>
@@ -281,6 +345,12 @@ const Config = {
   storageKeyTheme: 'phdmap.theme',
   storageKeyNotes: 'phdmap.notes.v1',
   storageKeyCustom: 'phdmap.custom.v1',
+  accounts: [
+    { id: 'naman', name: 'Naman', color: '#2563eb' },
+    { id: 'peehu', name: 'Peehu', color: '#9333ea' }
+  ],
+  trackerKey: acc => `${Config.storageKeyTracker}.${acc}`,
+  notesKey: acc => `${Config.storageKeyNotes}.${acc}`,
   dataUrl: 'data.json',
   detailUrl: 'detail.json', // relative path so it works on GitHub Pages project sites
   stages: [
@@ -351,28 +421,51 @@ const Store = {
   byId: new Map(),
   tracker: {},
   notes: {},
+  activeAccount: null,
 
   init() {
-    try { this.tracker = JSON.parse(localStorage.getItem(Config.storageKeyTracker)) || {}; }
-    catch (e) { this.tracker = {}; }
-    try { this.notes = JSON.parse(localStorage.getItem(Config.storageKeyNotes)) || {}; }
-    catch (e) { this.notes = {}; }
+    this.tracker = {};
+    this.notes = {};
   },
 
-  // Notes are kept per record id, independent of pipeline stage
+  readAccountData(accId) {
+    let tracker = {}, notes = {};
+    try { tracker = JSON.parse(localStorage.getItem(Config.trackerKey(accId))) || {}; } catch (e) { tracker = {}; }
+    try { notes = JSON.parse(localStorage.getItem(Config.notesKey(accId))) || {}; } catch (e) { notes = {}; }
+    return { tracker, notes };
+  },
+
+  getAccountStats(accId) {
+    const { tracker, notes } = this.readAccountData(accId);
+    const trackedCount = Object.values(tracker).filter(e => e && e.status && e.status !== 'none').length;
+    const notesCount = Object.values(notes).filter(n => n && n.text && n.text.trim()).length;
+    return { trackedCount, notesCount };
+  },
+
+  setAccount(accId) {
+    this.activeAccount = accId;
+    const { tracker, notes } = this.readAccountData(accId);
+    this.tracker = tracker;
+    this.notes = notes;
+  },
+
+  // Notes are kept per record id within the active local account
   setNote(id, text) {
+    if (!this.activeAccount) return;
     if (text.trim()) this.notes[id] = { text, updatedAt: new Date().toISOString() };
     else delete this.notes[id];
-    try { localStorage.setItem(Config.storageKeyNotes, JSON.stringify(this.notes)); }
+    try { localStorage.setItem(Config.notesKey(this.activeAccount), JSON.stringify(this.notes)); }
     catch (e) { console.warn('Notes save failed', e); }
   },
 
   saveTracker() {
-    try { localStorage.setItem(Config.storageKeyTracker, JSON.stringify(this.tracker)); }
+    if (!this.activeAccount) return;
+    try { localStorage.setItem(Config.trackerKey(this.activeAccount), JSON.stringify(this.tracker)); }
     catch (e) { console.warn('LocalStorage save failed', e); }
   },
 
   updateStage(id, status) {
+    if (!this.activeAccount) return;
     const prev = this.tracker[id]?.status;
     if (!status || status === 'none') delete this.tracker[id];
     else this.tracker[id] = { ...(this.tracker[id] || {}), status, updatedAt: new Date().toISOString() };
@@ -690,6 +783,9 @@ const Drawer = {
     const overlay = document.getElementById('drawer-overlay');
     document.getElementById('drawer-close-btn').addEventListener('click', () => this.close());
     overlay.addEventListener('click', e => { if (e.target === overlay) this.close(); });
+    document.getElementById('d-note-window-btn').addEventListener('click', () => {
+      if (this.currentRecord) NoteWindow.open(this.currentRecord);
+    });
     document.getElementById('d-remove-stage-btn').addEventListener('click', () => {
       if (this.currentRecord) Store.updateStage(this.currentRecord.id, 'none');
     });
@@ -743,7 +839,9 @@ const Drawer = {
     else applyBtn.style.display = 'none';
 
     const entry = Store.tracker[record.id];
-    document.getElementById('d-remove-stage-btn').style.display = entry && entry.status && entry.status !== 'none' ? 'inline-flex' : 'none';
+    const isTracked = !!(entry && entry.status && entry.status !== 'none');
+    document.getElementById('d-remove-stage-btn').style.display = isTracked ? 'inline-flex' : 'none';
+    document.getElementById('d-note-window-btn').style.display = isTracked ? 'inline-flex' : 'none';
 
     const rw = this.getResearch(record);
     const hasRw = rw && (rw.description || rw.summary || rw.researchAreas?.length || rw.groupsAndSupervisors?.length);
@@ -821,6 +919,7 @@ const Drawer = {
           status.textContent = 'Saved ' + new Date().toLocaleTimeString();
           this.updateNotesDot();
           App.renderTracker();
+          App.refreshCards();
         }, 400);
       });
     } else if (this.activeTab === 'tracker') {
@@ -968,11 +1067,154 @@ const Importer = {
   }
 };
 
+const NoteWindow = {
+  currentRecord: null,
+  timer: null,
+
+  init() {
+    const $ = id => document.getElementById(id);
+    const modal = $('note-modal');
+    const input = $('nm-input');
+    const status = $('nm-status');
+
+    $('nm-close-x').addEventListener('click', () => this.close());
+    $('nm-save-close').addEventListener('click', () => this.close());
+    modal.addEventListener('click', e => { if (e.target === modal) this.close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) this.close(); });
+
+    input.addEventListener('input', () => {
+      if (!this.currentRecord) return;
+      clearTimeout(this.timer);
+      status.textContent = 'Saving…';
+      this.timer = setTimeout(() => this.persist(), 300);
+    });
+
+    $('nm-clear').addEventListener('click', () => {
+      if (!this.currentRecord) return;
+      clearTimeout(this.timer);
+      input.value = '';
+      this.persist();
+      status.textContent = 'Note cleared';
+    });
+
+    $('nm-details').addEventListener('click', () => {
+      const rec = this.currentRecord;
+      this.close();
+      if (rec) Drawer.open(rec);
+    });
+  },
+
+  persist() {
+    if (!this.currentRecord) return;
+    const id = this.currentRecord.id;
+    const text = document.getElementById('nm-input').value;
+    Store.setNote(id, text);
+    const savedNote = Store.notes[id];
+    document.getElementById('nm-status').textContent = savedNote ? 'Saved ' + new Date(savedNote.updatedAt).toLocaleTimeString() : 'No note saved';
+    App.renderTracker();
+    App.refreshCards();
+    if (Drawer.currentRecord && Drawer.currentRecord.id === id) {
+      Drawer.updateNotesDot();
+      if (Drawer.activeTab === 'notes') Drawer.renderTabContent();
+    }
+  },
+
+  open(record) {
+    if (!record) return;
+    this.currentRecord = record;
+    const $ = id => document.getElementById(id);
+    const uni = Utils.getUniversity(record);
+    const typeKey = record._t || 'openings';
+    const typeBadge = $('nm-type');
+    typeBadge.textContent = TYPE_LABEL[typeKey] || 'Entity';
+    typeBadge.style.background = Config.markerColors[typeKey] || 'var(--primary)';
+
+    $('nm-title').textContent = record.title || record.name || record.id;
+    $('nm-sub').textContent = uni ? `${uni.name}${uni.city ? ' · ' + uni.city : ''}${uni.country ? ', ' + uni.country : ''}` : '';
+
+    const stageKey = Store.tracker[record.id]?.status;
+    const stage = Config.stages.find(s => s.key === stageKey);
+    $('nm-stage').textContent = stage ? `★ ${stage.label}` : 'Tracker';
+    const acc = Config.accounts.find(a => a.id === Store.activeAccount);
+    $('nm-account').textContent = acc ? `Account: ${acc.name}` : '';
+
+    const note = Store.notes[record.id];
+    $('nm-input').value = note?.text || '';
+    $('nm-status').textContent = note ? 'Last saved ' + new Date(note.updatedAt).toLocaleString() : 'Autosaves as you type';
+    $('note-modal').classList.add('open');
+    $('nm-input').focus();
+  },
+
+  close() {
+    clearTimeout(this.timer);
+    if (this.currentRecord) this.persist();
+    this.currentRecord = null;
+    document.getElementById('note-modal').classList.remove('open');
+  }
+};
+
+const AccountManager = {
+  init() {
+    const $ = id => document.getElementById(id);
+    $('account-btn').addEventListener('click', () => this.open(true));
+    $('account-modal-close').addEventListener('click', () => this.close());
+    $('account-modal').addEventListener('click', e => {
+      if (e.target === $('account-modal') && Store.activeAccount) this.close();
+    });
+  },
+
+  open(allowClose = false) {
+    const grid = document.getElementById('account-grid');
+    grid.innerHTML = Config.accounts.map(acc => {
+      const stats = Store.getAccountStats(acc.id);
+      const isActive = Store.activeAccount === acc.id;
+      return `
+        <button type="button" class="account-card${isActive ? ' active' : ''}" data-account="${acc.id}">
+          <div class="account-avatar" style="background:${acc.color}">${acc.name[0]}</div>
+          <div class="account-name">${Utils.escape(acc.name)}</div>
+          <div class="account-stats">
+            ${stats.trackedCount} tracked ${stats.trackedCount === 1 ? 'entity' : 'entities'}<br>
+            ${stats.notesCount} saved ${stats.notesCount === 1 ? 'note' : 'notes'}
+          </div>
+        </button>`;
+    }).join('');
+
+    grid.querySelectorAll('.account-card').forEach(btn => {
+      btn.addEventListener('click', () => this.select(btn.dataset.account));
+    });
+
+    document.getElementById('account-modal-close').style.display = allowClose && Store.activeAccount ? 'inline-block' : 'none';
+    document.getElementById('account-modal').classList.add('open');
+  },
+
+  close() {
+    if (!Store.activeAccount) return;
+    document.getElementById('account-modal').classList.remove('open');
+  },
+
+  select(accId) {
+    const acc = Config.accounts.find(a => a.id === accId);
+    if (!acc) return;
+    NoteWindow.close();
+    Drawer.close();
+    Store.setAccount(acc.id);
+    document.getElementById('account-label').textContent = acc.name;
+    document.querySelector('.account-dot').style.background = acc.color;
+    this.close();
+    if (App.dataLoaded) {
+      App.updateCounts();
+      App.refreshCards();
+      App.renderTracker();
+    }
+  }
+};
+
 const App = {
   activeTab: 'openings',
   filteredRecords: [],
   rendered: 0,
   CARD_BATCH: 60,
+  dataLoaded: false,
 
   async init() {
     const dataPromise = Store.fetchDataset(); // start download immediately, in parallel with setup
@@ -980,9 +1222,12 @@ const App = {
     MapModule.init();
     FilterEngine.init();
     Drawer.init();
+    NoteWindow.init();
+    AccountManager.init();
     Importer.init();
     this.initTheme();
     this.bindEvents();
+    AccountManager.open(false);
 
     const ok = await dataPromise;
     if (!ok) {
@@ -990,9 +1235,11 @@ const App = {
       document.getElementById('cards-container').innerHTML = '<div class="empty-msg">Could not load data.json. Make sure it sits next to index.html.</div>';
       return;
     }
+    this.dataLoaded = true;
     this.populateDropdowns();
     this.updateCounts();
     this.applyFilters();
+    if (this.activeTab === 'tracker') this.renderTracker();
     (window.requestIdleCallback || setTimeout)(() => Store.loadDetail().then(ok => {
       if (!ok) return;
       if (FilterEngine.state.search) this.applyFilters();
@@ -1016,8 +1263,15 @@ const App = {
       });
     });
 
-    // One delegated listener for all result cards
+    // One delegated listener for all result cards (and tracked note buttons)
     document.getElementById('cards-container').addEventListener('click', e => {
+      const noteBtn = e.target.closest('.btn-note-trigger');
+      if (noteBtn) {
+        e.stopPropagation();
+        const record = Store.byId.get(noteBtn.dataset.noteId);
+        if (record) NoteWindow.open(record);
+        return;
+      }
       const card = e.target.closest('.record-card');
       if (!card) return;
       const record = Store.byId.get(card.dataset.id);
@@ -1125,15 +1379,18 @@ const App = {
         const cls = n < 0 ? 'deadline-passed' : n <= 7 ? 'deadline-urgent' : 'deadline-open';
         deadline = `<span class="tag ${cls}">📅 ${Utils.escape(r.deadline)} · ${Utils.daysLeftText(r.deadline)}</span>`;
       }
-      const stageBadge = stageKey && stageKey !== 'none'
+      const isTracked = !!(stageKey && stageKey !== 'none');
+      const stageBadge = isTracked
         ? `<span class="tag stage-badge">★ ${Utils.escape(stage ? stage.label : stageKey)}</span>` : '';
+      const noteBtn = isTracked
+        ? `<button type="button" class="btn-note-trigger" data-note-id="${Utils.escape(r.id)}">📝 ${Store.notes[r.id] ? 'Edit Note' : 'Add Note'}</button>` : '';
 
       return `
         <div class="record-card" data-id="${Utils.escape(r.id)}">
           <div class="card-title">${Utils.escape(r.title || r.name)}</div>
           <div class="card-uni">🏛 ${uni ? Utils.escape(uni.name) : ''} · ${Utils.escape(uni?.country || '')}</div>
           <div class="tag-row">
-            ${deadline}${stageBadge}
+            ${deadline}${stageBadge}${noteBtn}
             ${(r.subfields || []).slice(0, 3).map(s => `<span class="tag">${Utils.escape(s)}</span>`).join('')}
           </div>
         </div>`;
@@ -1174,6 +1431,7 @@ const App = {
                 ${Store.notes[i.id] ? `<div class="kanban-note">📝 ${Utils.escape(Store.notes[i.id].text)}</div>` : ''}
                 <div class="kanban-actions">
                   <button class="btn-kanban" data-action="details" data-id="${Utils.escape(i.id)}">Details</button>
+                  <button class="btn-kanban btn-kanban-notes" data-action="notes" data-id="${Utils.escape(i.id)}" title="Open separate note-taking window">📝 ${Store.notes[i.id] ? 'Note •' : 'Notes'}</button>
                   <button class="btn-kanban btn-remove-stage" data-action="remove" data-id="${Utils.escape(i.id)}" title="Remove from application stage">🗑 Remove</button>
                 </div>
               </div>`).join('')}
@@ -1222,7 +1480,10 @@ const App = {
         if (!btn) return;
         const id = btn.dataset.id;
         if (btn.dataset.action === 'remove') Store.updateStage(id, 'none');
-        else {
+        else if (btn.dataset.action === 'notes') {
+          const item = board._tracked.find(i => i.id === id);
+          if (item) NoteWindow.open(item.record);
+        } else {
           const item = board._tracked.find(i => i.id === id);
           if (item) Drawer.open(item.record);
         }

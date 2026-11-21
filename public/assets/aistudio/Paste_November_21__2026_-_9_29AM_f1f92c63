@@ -1,0 +1,580 @@
+{
+  "universities": [
+    {
+      "universityName": "University of Groningen",
+      "city": "Groningen",
+      "country": "Netherlands",
+      "lat": 53.2194,
+      "lng": 6.5665,
+      "url": "https://www.rug.nl",
+      "phdProgramUrl": "https://www.rug.nl/research/kapteyn/vacatures/phd-positions",
+      "programType": "direct",
+      "funding": "€3,204 to €4,051 gross per month (CAO-NU)",
+      "deadlineNote": "Project-specific deadlines (20 Dec 2026)",
+      "subfields": [
+        "cosmology",
+        "galaxy-formation",
+        "computational-astrophysics",
+        "galactic-astronomy",
+        "galaxies"
+      ],
+      "sourceUrl": "https://werkenbij.rug.nl/en/all-vacancies/",
+      "uncertain": false
+    },
+    {
+      "universityName": "Max Planck Institute for Gravitational Physics (Albert Einstein Institute)",
+      "city": "Potsdam",
+      "country": "Germany",
+      "lat": 52.4167,
+      "lng": 12.9694,
+      "url": "https://www.aei.mpg.de",
+      "phdProgramUrl": "https://www.aei.mpg.de/jobs",
+      "programType": "structured",
+      "funding": "Fully funded IMPRS PhD positions",
+      "deadlineNote": "04 Jan 2027 and 15 Jan 2027",
+      "subfields": [
+        "gravitational-waves",
+        "numerical-relativity",
+        "relativistic-astrophysics",
+        "general-relativity",
+        "quantum-gravity",
+        "theory"
+      ],
+      "sourceUrl": "https://www.aei.mpg.de/jobs",
+      "uncertain": false
+    },
+    {
+      "universityName": "Institute of Science and Technology Austria (ISTA)",
+      "city": "Klosterneuburg",
+      "country": "Austria",
+      "lat": 48.3106,
+      "lng": 16.2611,
+      "url": "https://ista.ac.at",
+      "phdProgramUrl": "https://phd.pages.ista.ac.at/phd-application-admission/",
+      "programType": "structured",
+      "funding": null,
+      "deadlineNote": "08 Jan 2027 (15:00 CET)",
+      "subfields": [
+        "astrophysics",
+        "astronomy",
+        "cosmology"
+      ],
+      "sourceUrl": "https://astro.ista.ac.at/jobs/",
+      "uncertain": false
+    },
+    {
+      "universityName": "Leiden University",
+      "city": "Leiden",
+      "country": "Netherlands",
+      "lat": 52.1601,
+      "lng": 4.4970,
+      "url": "https://www.universiteitleiden.nl",
+      "phdProgramUrl": "https://local.strw.leidenuniv.nl/jobs/phd/",
+      "programType": "both",
+      "funding": "CAO-NU salary",
+      "deadlineNote": "12 Apr 2027 (high-contrast imaging project)",
+      "subfields": [
+        "instrumentation",
+        "astronomy",
+        "astrophysics"
+      ],
+      "sourceUrl": "https://local.strw.leidenuniv.nl/jobs/phd/",
+      "uncertain": true
+    },
+    {
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "lat": 48.7248,
+      "lng": 2.1489,
+      "url": "https://irfu.cea.fr",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "programType": "direct",
+      "funding": null,
+      "deadlineNote": "Rolling / ED127 2027 thesis proposals",
+      "subfields": [
+        "cosmology",
+        "galaxies",
+        "dark-matter",
+        "gravitational-lensing",
+        "large-scale-structure",
+        "data-science",
+        "high-energy",
+        "instrumentation"
+      ],
+      "sourceUrl": "https://www.theses-postdocs.cea.fr",
+      "uncertain": false
+    }
+  ],
+  "openings": [
+    {
+      "id": "opn-kapteyn-202611-local-group-cosmological",
+      "title": "PhD position: Placing the Local Group in a cosmological context",
+      "universityName": "University of Groningen",
+      "city": "Groningen",
+      "country": "Netherlands",
+      "group": "Kapteyn Astronomical Institute",
+      "description": "Start date: Not stated. Eligibility: \"A successful candidate must hold an MSc or equivalent degree in Physics, Astronomy, or a closely related field by the starting date of the position.\"",
+      "funding": "offer a salary of at least € 3.204 up to a maximum of € 4.051 (promovendus) gross per month for a full-time employment contract",
+      "deadline": "2026-12-20",
+      "deadlineNote": "23:59 Dutch local time",
+      "applyUrl": "https://werkenbij.rug.nl/vacature/phd-position-placing-the-local-group-in-a-cosmological-context",
+      "sourceUrl": "https://werkenbij.rug.nl/en/all-vacancies/",
+      "subfields": [
+        "cosmology",
+        "galaxy-formation",
+        "computational-astrophysics",
+        "galactic-astronomy",
+        "galaxies"
+      ],
+      "status": "open",
+      "summary": "Four-year full-time PhD project at the Kapteyn Astronomical Institute co-developing cosmological hydrodynamical simulations of Local Group galaxies. Jointly supervised by Prof. Amina Helmi (Groningen) and Dr. Ruediger Pakmor (MPA Garching).",
+      "uncertain": true
+    },
+    {
+      "id": "opn-aei-202611-gravity-at-the-extreme",
+      "title": "PhD Positions in Gravity at the Extreme",
+      "universityName": "Max Planck Institute for Gravitational Physics (Albert Einstein Institute)",
+      "city": "Potsdam",
+      "country": "Germany",
+      "group": "ACR, CRA, Multi-messenger Astrophysics of Compact Binaries / University of Potsdam",
+      "description": "Start date: Not stated. Eligibility: \"committed to providing employment opportunities to all qualified applicants without regard to race, color, religion, age, gender identity, sexual orientation or national origin.\"",
+      "funding": "several fully funded PhD positions",
+      "deadline": "2027-01-04",
+      "deadlineNote": "23:59:59 UTC+1 (reference letters due 11 Jan 2027)",
+      "applyUrl": "https://www.aei.mpg.de/1523929/phd-positions-in-gravity-at-the-extreme-2027",
+      "sourceUrl": "https://www.aei.mpg.de/jobs",
+      "subfields": [
+        "gravitational-waves",
+        "numerical-relativity",
+        "relativistic-astrophysics",
+        "high-energy"
+      ],
+      "status": "open",
+      "summary": "Fully funded 3–4 year IMPRS PhD positions in Potsdam focusing on gravitational-wave modeling, waveform development, numerical relativity, and multi-messenger astrophysics. Open to candidates worldwide holding a Master's degree by the start date.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-ista-202611-phd-call-2027",
+      "title": "PhD Call 2027",
+      "universityName": "Institute of Science and Technology Austria (ISTA)",
+      "city": "Klosterneuburg",
+      "country": "Austria",
+      "group": "Astronomy and Astrophysics",
+      "description": "Start date: 15 Sep 2027. Eligibility: \"If you want to do a PhD program at ISTA, you need to have a bachelor's or a master's degree in science.\"",
+      "funding": null,
+      "deadline": "2027-01-08",
+      "deadlineNote": "3:00 PM CET (referee deadline 12 Jan 2027)",
+      "applyUrl": "https://phd.pages.ista.ac.at/phd-application-admission/",
+      "sourceUrl": "https://astro.ista.ac.at/jobs/",
+      "subfields": [
+        "astrophysics",
+        "astronomy",
+        "cosmology"
+      ],
+      "status": "open",
+      "summary": "Graduate school PhD intake at ISTA including Astronomy and Astrophysics groups, starting uniformly on 15 September 2027. Open to international students with a Bachelor's or Master's degree in science.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-aei-202611-scattering-amplitudes-quantum-gravity",
+      "title": "PhD positions in Scattering Amplitudes and Quantum Gravity at the Max Planck Institute for Gravitational Physics in Potsdam",
+      "universityName": "Max Planck Institute for Gravitational Physics (Albert Einstein Institute)",
+      "city": "Potsdam",
+      "country": "Germany",
+      "group": "Quantum Gravity and Unified Theories / MaScAmp ERC Synergy Grant",
+      "description": "Start date: Not stated. Eligibility: \"committed to providing employment opportunities to all qualified applicants without regard to race, color, religion, age, gender identity, sexual orientation or national origin.\"",
+      "funding": null,
+      "deadline": "2027-01-15",
+      "deadlineNote": "23:59:59 UTC+1 (reference letters due 22 Jan 2027)",
+      "applyUrl": "https://www.aei.mpg.de/1527212/phd-positions-in-scattering-amplitudes-and-quantum-gravity",
+      "sourceUrl": "https://www.aei.mpg.de/jobs",
+      "subfields": [
+        "quantum-gravity",
+        "general-relativity",
+        "gravitation",
+        "theory"
+      ],
+      "status": "open",
+      "summary": "3–4 year IMPRS PhD positions at AEI Potsdam, including a position under the ERC Synergy Grant MaScAmp led by Axel Kleinschmidt, studying scattering amplitudes and effective actions of gravity. Open to international applicants holding a Master's degree by start date.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-leiden-202611-high-contrast-imaging",
+      "title": "PhD position on the development of the next generation of high contrast imaging technologies at Leiden Observatory",
+      "universityName": "Leiden University",
+      "city": "Leiden",
+      "country": "Netherlands",
+      "group": "Leiden Observatory",
+      "description": "Start date: Not stated. Eligibility: null",
+      "funding": null,
+      "deadline": "2027-04-12",
+      "deadlineNote": null,
+      "applyUrl": "https://local.strw.leidenuniv.nl/jobs/phd/",
+      "sourceUrl": "https://local.strw.leidenuniv.nl/jobs/phd/",
+      "subfields": [
+        "instrumentation",
+        "astronomy"
+      ],
+      "status": "open",
+      "summary": "PhD project at Leiden Observatory developing next-generation astronomical high-contrast imaging instrumentation. Specific project subpage details could not be directly verified.",
+      "uncertain": true
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0242",
+      "title": "Correction numérique de la turbulence en imagerie astronomique à grand champ // Digital correction of turbulence for wide-field astronomical imaging",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "IRFU/DAP (ED127)",
+      "description": "Start date: 01 Sep 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0242)",
+      "applyUrl": "https://www.abg.asso.fr/fr/candidatOffres/show/id_offre/140669/job/correction-numerique-de-la-turbulence-en-imagerie-astronomique-a-grand-champ-digital-correction-of-turbulence-for-wide-field-astronomical-imaging",
+      "sourceUrl": "https://www.abg.asso.fr/fr/candidatOffres/show/id_offre/140669/job/correction-numerique-de-la-turbulence-en-imagerie-astronomique-a-grand-champ-digital-correction-of-turbulence-for-wide-field-astronomical-imaging",
+      "subfields": [
+        "instrumentation",
+        "observational",
+        "computational"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Emmanuel Bertin focusing on digital turbulence correction in wide-field astronomical imaging.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0078",
+      "title": "from Rubin/LSST alerts to TeV gamma rays with H.E.S.S. and CTAO, a multi-messenger approach",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0078)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42086&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0078",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42086&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0078",
+      "subfields": [
+        "high-energy",
+        "transient-astrophysics",
+        "observational"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Fabian Schussler linking Rubin/LSST transient alerts with TeV gamma-ray observations from H.E.S.S. and CTAO.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0094",
+      "title": "Hunting for Hidden Galaxies at the Universe's Peak Star-Formation Epoch: How Do Galaxies Form, Grow and Die in the Early Universe?",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU/DAP/LCEG",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0094)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42087&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0094",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42087&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0094",
+      "subfields": [
+        "galaxies",
+        "galaxy-formation",
+        "dark-matter",
+        "early-universe",
+        "extragalactic"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Emanuele Daddi using JWST observations to study satellite galaxy counts, giant star-forming clumps, and ram-pressure stripping in early galaxy groups.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0141",
+      "title": "Testing cosmological models with the Lyman-alpha forest from the DESI survey",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU/DPhP",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0141)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/job/job-testing-cosmological-models-with-the-lyman-alpha-forest-from-the-desi-survey_42089.aspx?LCID=2057",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/job/job-testing-cosmological-models-with-the-lyman-alpha-forest-from-the-desi-survey_42089.aspx?LCID=2057",
+      "subfields": [
+        "cosmology",
+        "large-scale-structure",
+        "spectroscopy"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Eric Armengaud testing cosmological models using Lyman-alpha forest data from the DESI survey.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0167",
+      "title": "Leveraging Machine Learning for Cosmological Inference with Weak Lensing selected Galaxy Clusters",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0167)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42201&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0167",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42201&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0167",
+      "subfields": [
+        "cosmology",
+        "gravitational-lensing",
+        "data-science",
+        "galaxies"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Sandrine Pires applying machine learning to cosmological inference with weak-lensing-selected galaxy clusters in the Euclid mission.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0199",
+      "title": "Generative AI and Multi-tracer Cosmological Inference: Euclid and 21-cm HI Intensity Mapping",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU/DAP/LCS",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0199)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42147&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0199",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42147&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0199",
+      "subfields": [
+        "cosmology",
+        "dark-matter",
+        "large-scale-structure",
+        "data-science",
+        "radio-astronomy"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Jean-Luc Starck developing generative AI methods for multi-tracer cosmological inference combining Euclid and 21-cm HI intensity mapping.",
+      "uncertain": false
+    },
+    {
+      "id": "opn-cea-saclay-202611-sl-drf-27-0257",
+      "title": "Probing dark matter in the core of galaxy clusters with gravitational lensing flexion from the Euclid satellite",
+      "universityName": "CEA Saclay",
+      "city": "Gif-sur-Yvette",
+      "country": "France",
+      "group": "DRF/IRFU/DAP/LCS",
+      "description": "Start date: 01 Oct 2027. Eligibility: null",
+      "funding": null,
+      "deadline": null,
+      "deadlineNote": "Rolling / see call (Ref. SL-DRF-27-0257)",
+      "applyUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42202&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0257",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42202&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0257",
+      "subfields": [
+        "dark-matter",
+        "gravitational-lensing",
+        "cosmology",
+        "galaxies"
+      ],
+      "status": "open",
+      "summary": "Doctoral thesis proposal at CEA Saclay supervised by Martin Kilbinger probing dark matter distribution in galaxy cluster cores using gravitational lensing flexion measurements from Euclid.",
+      "uncertain": false
+    }
+  ],
+  "supervisors": [
+    {
+      "id": "sup-kapteyn-amina-helmi",
+      "name": "Amina Helmi",
+      "universityName": "University of Groningen",
+      "group": "Kapteyn Astronomical Institute",
+      "subfields": [
+        "galactic-astronomy",
+        "galaxy-formation",
+        "cosmology"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Galactic Archaeology and cosmological hydrodynamical simulations of the Milky Way and Local Group formation.",
+      "summary": "Professor at the Kapteyn Astronomical Institute, University of Groningen, co-supervising a 2027 PhD project on Local Group cosmological simulations.",
+      "sourceUrl": "https://werkenbij.rug.nl/en/all-vacancies/",
+      "phdProgramUrl": "https://www.rug.nl/research/kapteyn/vacatures/phd-positions",
+      "deadline": "2026-12-20",
+      "uncertain": true
+    },
+    {
+      "id": "sup-mpa-ruediger-pakmor",
+      "name": "Ruediger Pakmor",
+      "universityName": "Max Planck Institute for Astrophysics",
+      "group": "Computational Astrophysics",
+      "subfields": [
+        "computational-astrophysics",
+        "galaxy-formation",
+        "cosmology"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Cosmological magnetohydrodynamical simulations of galaxy formation and the Local Group.",
+      "summary": "Researcher at the Max Planck Institute for Astrophysics in Garching co-supervising a joint 2027 PhD project with the University of Groningen.",
+      "sourceUrl": "https://werkenbij.rug.nl/en/all-vacancies/",
+      "phdProgramUrl": null,
+      "deadline": "2026-12-20",
+      "uncertain": true
+    },
+    {
+      "id": "sup-aei-axel-kleinschmidt",
+      "name": "Axel Kleinschmidt",
+      "universityName": "Max Planck Institute for Gravitational Physics (Albert Einstein Institute)",
+      "group": "Quantum Gravity and Unified Theories",
+      "subfields": [
+        "quantum-gravity",
+        "general-relativity",
+        "theory"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Mathematical structures of scattering amplitudes, symmetries underlying effective actions of gravity, and quantum gravity.",
+      "summary": "Principal Investigator on the ERC Synergy Grant MaScAmp at AEI Potsdam recruiting PhD students for 2027.",
+      "sourceUrl": "https://www.aei.mpg.de/1527212/phd-positions-in-scattering-amplitudes-and-quantum-gravity",
+      "phdProgramUrl": "https://www.aei.mpg.de/jobs",
+      "deadline": "2027-01-15",
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-dap-emmanuel-bertin",
+      "name": "Emmanuel Bertin",
+      "universityName": "CEA Saclay",
+      "group": "IRFU/DAP",
+      "subfields": [
+        "instrumentation",
+        "observational",
+        "computational"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Digital correction of atmospheric turbulence for wide-field astronomical imaging.",
+      "summary": "Thesis supervisor at CEA Saclay (IRFU/DAP) offering a 2027 doctoral project under ED127.",
+      "sourceUrl": "https://www.abg.asso.fr/fr/candidatOffres/show/id_offre/140669/job/correction-numerique-de-la-turbulence-en-imagerie-astronomique-a-grand-champ-digital-correction-of-turbulence-for-wide-field-astronomical-imaging",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-irfu-fabian-schussler",
+      "name": "Fabian Schussler",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU",
+      "subfields": [
+        "high-energy",
+        "transient-astrophysics",
+        "observational"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Multi-messenger astrophysics connecting Rubin/LSST transient alerts with TeV gamma-ray observations from H.E.S.S. and CTAO.",
+      "summary": "Thesis director at CEA Saclay offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0078).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42086&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0078",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-lceg-emanuele-daddi",
+      "name": "Emanuele Daddi",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU/DAP/LCEG",
+      "subfields": [
+        "galaxies",
+        "galaxy-formation",
+        "dark-matter",
+        "extragalactic"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Galaxy formation, growth, and quenching in high-redshift groups using JWST data.",
+      "summary": "Thesis director at CEA Saclay (LCEG) offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0094).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42087&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0094",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-dphp-eric-armengaud",
+      "name": "Eric Armengaud",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU/DPhP",
+      "subfields": [
+        "cosmology",
+        "large-scale-structure",
+        "spectroscopy"
+      ],
+      "staffPageUrl": "https://irfu.cea.fr/dphp/",
+      "takingStudents": true,
+      "researchWork": "Testing cosmological models using the Lyman-alpha forest from the DESI spectroscopic survey.",
+      "summary": "Thesis director at CEA Saclay (DPhP) offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0141).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/job/job-testing-cosmological-models-with-the-lyman-alpha-forest-from-the-desi-survey_42089.aspx?LCID=2057",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-irfu-sandrine-pires",
+      "name": "Sandrine Pires",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU",
+      "subfields": [
+        "cosmology",
+        "gravitational-lensing",
+        "data-science"
+      ],
+      "staffPageUrl": "https://irfu.cea.fr/Pisp/sandrine.pires/",
+      "takingStudents": true,
+      "researchWork": "Machine learning methods for cosmological inference with weak-lensing-selected galaxy clusters in Euclid.",
+      "summary": "Thesis director at CEA Saclay offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0167).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42201&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0167",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-lcs-jean-luc-starck",
+      "name": "Jean-Luc Starck",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU/DAP/LCS",
+      "subfields": [
+        "cosmology",
+        "data-science",
+        "dark-matter",
+        "large-scale-structure"
+      ],
+      "staffPageUrl": "http://jstarck.cosmostat.org",
+      "takingStudents": true,
+      "researchWork": "Generative AI and multi-tracer cosmological inference combining Euclid weak lensing and 21-cm HI intensity mapping.",
+      "summary": "Thesis director at CEA Saclay (CosmoStat/LCS) offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0199).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42147&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0199",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    },
+    {
+      "id": "sup-cea-lcs-martin-kilbinger",
+      "name": "Martin Kilbinger",
+      "universityName": "CEA Saclay",
+      "group": "DRF/IRFU/DAP/LCS",
+      "subfields": [
+        "dark-matter",
+        "gravitational-lensing",
+        "cosmology",
+        "galaxies"
+      ],
+      "staffPageUrl": null,
+      "takingStudents": true,
+      "researchWork": "Probing dark matter in galaxy cluster cores using gravitational lensing flexion from the Euclid satellite.",
+      "summary": "Thesis director at CEA Saclay (LCS) offering a 2027 doctoral thesis topic (Ref. SL-DRF-27-0257).",
+      "sourceUrl": "https://www.theses-postdocs.cea.fr/Pages/Offre/detailoffre.aspx?idOffre=42202&idOrigine=1858&LCID=2057&offerReference=SL-DRF-27-0257",
+      "phdProgramUrl": "https://www.theses-postdocs.cea.fr",
+      "deadline": null,
+      "uncertain": false
+    }
+  ],
+  "newSubfields": []
+}

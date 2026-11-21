@@ -75,11 +75,13 @@ main{flex:1;display:flex;min-height:0;position:relative}
 .empty-msg{text-align:center;padding:40px 10px;color:var(--text-subtle)}
 
 .record-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;cursor:pointer}
+.record-card.is-new{border-left:3px solid var(--emerald)}
 .record-card:hover{border-color:var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .card-title{font-weight:700;font-size:13px;line-height:1.3;margin-bottom:4px}
 .card-uni{font-size:12px;color:var(--text-muted);margin-bottom:8px}
 .tag-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .tag{font-size:10px;font-family:var(--font-mono);font-weight:600;padding:2px 6px;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border-subtle);color:var(--text-muted)}
+.tag.new-badge{background:color-mix(in srgb,var(--emerald) 16%,var(--surface));color:var(--emerald);border-color:color-mix(in srgb,var(--emerald) 55%,var(--border));font-weight:800;letter-spacing:.04em}
 .tag.deadline-open{background:var(--amber-bg);color:var(--amber);border-color:var(--amber)}
 .tag.deadline-urgent{background:var(--rose-bg);color:var(--rose);border-color:var(--rose)}
 .tag.deadline-passed{color:var(--text-subtle)}
@@ -783,6 +785,12 @@ const Utils = {
     if (!record) return null;
     if (record._t === 'universities') return record;
     return Store.uniById.get(record.universityId) || null;
+  },
+
+  isNew(record) {
+    if (!record?.newUntil) return false;
+    const until = Date.parse(record.newUntil);
+    return !isNaN(until) && Date.now() < until;
   }
 };
 
@@ -856,7 +864,7 @@ const MapModule = {
         const b = document.createElement('button');
         b.type = 'button';
         b.className = 'pin-item';
-        b.textContent = nameOf(item);
+        b.textContent = (Utils.isNew(item) ? '✨ ' : '') + nameOf(item);
         b.addEventListener('click', () => Drawer.open(item));
         list.appendChild(b);
       });
@@ -1038,7 +1046,7 @@ const Drawer = {
     document.getElementById('d-uni').textContent = uni ? `${uni.name} · ${uni.city || ''} ${uni.country}` : '';
 
     const applyBtn = document.getElementById('d-apply-btn');
-    const portalUrl = record.applyUrl || record.staffPageUrl || record.phdProgramUrl || record.url || uni?.url;
+    const portalUrl = record.applyUrl || record.staffPageUrl || record.phdProgramUrl || record.sourceUrl || record.url || uni?.url;
     if (portalUrl) { applyBtn.href = portalUrl; applyBtn.style.display = 'inline-flex'; }
     else applyBtn.style.display = 'none';
 
@@ -1083,6 +1091,7 @@ const Drawer = {
             ${r.funding ? `<div class="fact-label">Funding</div><div>${esc(r.funding)}</div>` : ''}
             ${r.programType ? `<div class="fact-label">Program Type</div><div>${esc(r.programType)}</div>` : ''}
             ${r.takingStudents != null ? `<div class="fact-label">Students</div><div>${r.takingStudents ? '✅ Taking Students' : '❌ Not currently taking students'}</div>` : ''}
+            ${Utils.isNew(r) ? `<div class="fact-label">Highlight</div><div><span class="tag new-badge">✨ NEW</span> <span style="color:#94a3b8;font-size:11px;margin-left:6px">Marked new until ${esc(new Date(r.newUntil).toLocaleString())}</span></div>` : ''}
             ${r.uncertain ? `<div class="fact-label">Note</div><div style="color:#fbbf24">⚠ Some details are unconfirmed. Check the source page.</div>` : ''}
           </div>
         </div>
@@ -2027,10 +2036,24 @@ const App = {
     MapModule.renderMarkers(this.filteredRecords, this.activeTab);
   },
 
-  // Tracked records float to the top; the sort is stable so other order is kept
+  // Openings sort strictly ascending by deadline (then title); other tabs float tracked & new first
   sortTrackedFirst() {
-    const t = r => { const e = Store.tracker[r.id]; return e && e.status && e.status !== 'none' ? 1 : 0; };
-    this.filteredRecords.sort((a, b) => t(b) - t(a));
+    if (this.activeTab === 'openings') {
+      this.filteredRecords.sort((a, b) => {
+        const da = a.deadline || '9999-99-99';
+        const db = b.deadline || '9999-99-99';
+        if (da !== db) return da < db ? -1 : 1;
+        return (a.title || a.name || '').localeCompare(b.title || b.name || '');
+      });
+      return;
+    }
+    const score = r => {
+      const e = Store.tracker[r.id];
+      const tracked = e && e.status && e.status !== 'none' ? 2 : 0;
+      const isNew = Utils.isNew(r) ? 1 : 0;
+      return tracked + isNew;
+    };
+    this.filteredRecords.sort((a, b) => score(b) - score(a));
   },
 
   refreshCards() {
@@ -2077,13 +2100,15 @@ const App = {
       const calBtn = `<button type="button" class="btn-cal-trigger" data-cal-id="${Utils.escape(r.id)}" title="Add last date or custom reminder to Google Calendar">📅 ${r.deadline ? 'Remind Last Date' : 'Add Reminder'}</button>`;
       const calOpenUrl = CalendarUI.calendarUrlForDate(r.deadline || Store.tracker[r.id]?.follow || Store.tracker[r.id]?.interviewDate);
       const calOpenBtn = `<a class="btn-cal-open" href="${Utils.escape(calOpenUrl)}" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 ↗</a>`;
+      const isNew = Utils.isNew(r);
+      const newBadge = isNew ? '<span class="tag new-badge">✨ NEW</span>' : '';
 
       return `
-        <div class="record-card" data-id="${Utils.escape(r.id)}">
+        <div class="record-card${isNew ? ' is-new' : ''}" data-id="${Utils.escape(r.id)}">
           <div class="card-title">${Utils.escape(r.title || r.name)}</div>
           <div class="card-uni">🏛 ${uni ? Utils.escape(uni.name) : ''} · ${Utils.escape(uni?.country || '')}</div>
           <div class="tag-row">
-            ${deadline}${stageBadge}${noteBtn}${calBtn}${calOpenBtn}
+            ${newBadge}${deadline}${stageBadge}${noteBtn}${calBtn}${calOpenBtn}
             ${(r.subfields || []).slice(0, 3).map(s => `<span class="tag">${Utils.escape(s)}</span>`).join('')}
           </div>
         </div>`;

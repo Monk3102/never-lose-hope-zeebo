@@ -183,6 +183,46 @@ main{flex:1;display:flex;min-height:0;position:relative}
 .btn-kanban-notes{color:var(--primary)!important;font-weight:600}
 .btn-drawer-note{background:#1e293b;color:#93c5fd;border:1px solid #334155;font-size:11px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;display:none;align-items:center;gap:4px}
 .btn-drawer-note:hover{background:#334155;color:#fff}
+.btn-drawer-cal{background:#14532d;color:#86efac;border:1px solid #166534;font-size:11px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.btn-drawer-cal:hover{background:#166534;color:#fff}
+.btn-cal-trigger{font-size:10px;font-family:var(--font-mono);font-weight:700;padding:2px 7px;border-radius:4px;background:color-mix(in srgb,var(--emerald) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--emerald) 40%,var(--border));color:var(--emerald);cursor:pointer}
+.btn-cal-trigger:hover{background:var(--emerald);color:#fff}
+.btn-kanban-cal{color:var(--emerald)!important;font-weight:600}
+.gsi-material-button{user-select:none;-webkit-user-select:none;background-color:#fff;border:1px solid #747775;border-radius:4px;box-sizing:border-box;color:#1f1f1f;cursor:pointer;font-family:'Roboto',arial,sans-serif;font-size:12px;font-weight:500;height:30px;letter-spacing:.25px;outline:none;overflow:hidden;padding:0 10px;position:relative;text-align:center;transition:background-color .218s,border-color .218s,box-shadow .218s;vertical-align:middle;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+.gsi-material-button:hover{box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);background-color:#f8faff}
+.gsi-material-button .gsi-material-button-content-wrapper{display:flex;align-items:center;flex-direction:row;flex-wrap:nowrap;height:100%;justify-content:center;gap:8px}
+.gsi-material-button .gsi-material-button-icon{height:16px;width:16px;min-width:16px;display:flex;align-items:center}
+.gcal-connected-btn{display:none;align-items:center;gap:6px;background:color-mix(in srgb,var(--emerald) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--emerald) 45%,var(--border));color:var(--emerald);border-radius:6px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer;max-width:210px}
+.gcal-connected-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-modal-box{width:min(600px,94vw);padding:18px;gap:12px;overflow-y:auto}
+.cal-presets{display:flex;flex-wrap:wrap;gap:6px}
+.cal-preset-btn{border:1px solid var(--border);background:var(--surface-subtle);color:var(--text);font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;cursor:pointer}
+.cal-preset-btn:hover,.cal-preset-btn.active{border-color:var(--primary);background:var(--primary-subtle);color:var(--primary)}
+.cal-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cal-field{display:flex;flex-direction:column;gap:4px}
+.cal-field.full{grid-column:1 / -1}
+.cal-field label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text-subtle)}
+.cal-field input,.cal-field select,.cal-field textarea{background:var(--surface-subtle);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:7px 9px;font-size:12px;font-family:var(--font-sans);outline:none}
+.cal-field input:focus,.cal-field select:focus,.cal-field textarea:focus{border-color:var(--primary);background:var(--surface)}
+.cal-field textarea{min-height:66px;resize:vertical}
+.cal-auth-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px;border-radius:8px;background:var(--primary-subtle);border:1px solid var(--primary-border);font-size:12px}
+.cal-events-list{display:flex;flex-direction:column;gap:6px;max-height:190px;overflow-y:auto}
+.cal-event-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border:1px solid var(--border);background:var(--surface-subtle);border-radius:6px;font-size:12px}
+.cal-event-info{min-width:0;flex:1}
+.cal-event-title{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal-event-time{font-size:11px;font-family:var(--font-mono);color:var(--text-muted);margin-top:2px}
+.cal-event-btns{display:flex;align-items:center;gap:4px;flex-shrink:0}
+.cal-msg{font-size:12px;min-height:16px}
+.cal-msg.err{color:var(--rose)}.cal-msg.ok{color:var(--emerald)}
+.confirm-modal-box{width:min(440px,92vw);padding:20px;gap:12px}
+.confirm-summary{background:var(--surface-subtle);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5;white-space:pre-wrap}
+.btn-gcal-web,.btn-gcal-link{display:inline-flex;align-items:center;gap:5px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 10px;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer}
+.btn-gcal-web:hover,.btn-gcal-link:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-subtle)}
+.btn-drawer-cal-link{background:#0f172a;color:#cbd5e1;border:1px solid #334155;font-size:11px;font-weight:600;padding:6px 12px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.btn-drawer-cal-link:hover{background:#1e293b;color:#fff;border-color:#475569}
+.btn-cal-open{font-size:10px;font-family:var(--font-mono);font-weight:700;padding:2px 6px;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center}
+.btn-cal-open:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-subtle)}
+@media (max-width:600px){.cal-form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -199,6 +239,23 @@ main{flex:1;display:flex;min-height:0;position:relative}
     <button class="tab-btn" data-tab="tracker">Tracker <span class="tab-count" id="count-tracker">0</span></button>
   </nav>
   <div class="header-actions">
+    <button id="gcal-signin-btn" class="gsi-material-button" title="Sign in with Google to save reminders to Google Calendar">
+      <div class="gsi-material-button-state"></div>
+      <div class="gsi-material-button-content-wrapper">
+        <div class="gsi-material-button-icon">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style="display:block">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+            <path fill="none" d="M0 0h48v48H0z"></path>
+          </svg>
+        </div>
+        <span class="gsi-material-button-contents">Sign in with Google</span>
+      </div>
+    </button>
+    <button id="gcal-connected-btn" class="gcal-connected-btn" title="View Google Calendar reminders & account">📅 <span id="gcal-user-label">Calendar</span></button>
+    <a id="open-gcal-web-btn" class="btn-gcal-web" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 Open Calendar ↗</a>
     <button id="account-btn" class="account-btn" title="Switch local account"><span class="account-dot"></span><span id="account-label">Select Account</span></button>
     <button id="add-btn" class="btn-filter-trigger" title="Add entries in bulk">＋ Add</button>
     <button id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme">◐</button>
@@ -256,7 +313,10 @@ main{flex:1;display:flex;min-height:0;position:relative}
       <div class="metric-card"><div class="metric-label" style="color:var(--amber)">Interviews</div><div class="metric-val" style="color:var(--amber)" id="metric-interviews">0</div></div>
       <div class="metric-card"><div class="metric-label" style="color:var(--emerald)">Offers</div><div class="metric-val" style="color:var(--emerald)" id="metric-offers">0</div></div>
     </div>
-    <div class="type-legend"><span><i style="background:var(--c-openings)"></i>Opening</span><span><i style="background:var(--c-universities)"></i>University</span><span><i style="background:var(--c-supervisors)"></i>Supervisor</span></div>
+    <div class="type-legend" style="justify-content:space-between;align-items:center">
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><span><i style="background:var(--c-openings)"></i>Opening</span><span><i style="background:var(--c-universities)"></i>University</span><span><i style="background:var(--c-supervisors)"></i>Supervisor</span></div>
+      <a class="btn-gcal-web" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 Open Google Calendar ↗</a>
+    </div>
     <div class="kanban-board" id="kanban-board"></div>
   </div>
 </main>
@@ -313,6 +373,145 @@ main{flex:1;display:flex;min-height:0;position:relative}
   </div>
 </div>
 
+<div id="cal-modal" class="modal" style="z-index:2300">
+  <div class="modal-box cal-modal-box">
+    <div class="note-modal-head">
+      <div>
+        <span id="cm-type" class="note-type-badge"></span>
+        <h2 id="cm-title">Google Calendar Reminder</h2>
+        <div id="cm-sub" class="note-modal-sub"></div>
+      </div>
+      <button id="cm-close-x" class="btn-kanban" style="font-size:16px" title="Close">✕</button>
+    </div>
+
+    <div id="cm-auth-banner" class="cal-auth-banner" style="display:none">
+      <div>
+        <strong>Connect Google Calendar</strong>
+        <div style="color:var(--text-muted);font-size:11px;margin-top:2px">Sign in with Google to save last dates and reminders directly to your calendar.</div>
+      </div>
+      <button id="cm-signin-btn" class="gsi-material-button" type="button">
+        <div class="gsi-material-button-state"></div>
+        <div class="gsi-material-button-content-wrapper">
+          <div class="gsi-material-button-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style="display:block">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+              <path fill="none" d="M0 0h48v48H0z"></path>
+            </svg>
+          </div>
+          <span class="gsi-material-button-contents">Sign in with Google</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="cal-presets" id="cm-presets"></div>
+
+    <div class="cal-form-grid">
+      <div class="cal-field full">
+        <label for="cm-summary">Reminder Title</label>
+        <input id="cm-summary" type="text" placeholder="e.g., Deadline: PhD Opening">
+      </div>
+      <div class="cal-field">
+        <label for="cm-date">Date</label>
+        <input id="cm-date" type="date">
+      </div>
+      <div class="cal-field" style="justify-content:flex-end">
+        <label class="checkbox-row" style="text-transform:none;letter-spacing:0;font-weight:600;color:var(--text);padding-bottom:6px">
+          <input id="cm-allday" type="checkbox" checked>
+          <span>All-day event (recommended for deadlines)</span>
+        </label>
+      </div>
+      <div class="cal-field" id="cm-time-wrap" style="display:none">
+        <label for="cm-time">Start Time</label>
+        <input id="cm-time" type="time" value="09:00">
+      </div>
+      <div class="cal-field" id="cm-dur-wrap" style="display:none">
+        <label for="cm-duration">Duration</label>
+        <select id="cm-duration">
+          <option value="15">15 minutes</option>
+          <option value="30" selected>30 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="90">1.5 hours</option>
+        </select>
+      </div>
+      <div class="cal-field">
+        <label for="cm-remind-min">Notify Before</label>
+        <select id="cm-remind-min">
+          <option value="15">15 minutes before</option>
+          <option value="30">30 minutes before</option>
+          <option value="60">1 hour before</option>
+          <option value="1440" selected>1 day before</option>
+          <option value="2880">2 days before</option>
+          <option value="10080">1 week before</option>
+        </select>
+      </div>
+      <div class="cal-field">
+        <label for="cm-remind-method">Reminder Type</label>
+        <select id="cm-remind-method">
+          <option value="both" selected>Notification + Email</option>
+          <option value="popup">Popup Notification</option>
+          <option value="email">Email Reminder</option>
+        </select>
+      </div>
+      <div class="cal-field full">
+        <label for="cm-desc">Details / Notes</label>
+        <textarea id="cm-desc" placeholder="Links, notes, supervisor details..."></textarea>
+      </div>
+    </div>
+
+    <div id="cm-msg" class="cal-msg"></div>
+
+    <div class="modal-actions">
+      <button id="cm-cancel-edit" class="btn-filter-trigger" style="display:none">Cancel Edit</button>
+      <a id="cm-open-gcal" class="btn-gcal-link" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 Open Google Calendar ↗</a>
+      <span class="spacer"></span>
+      <button id="cm-close-btn" class="btn-filter-trigger">Close</button>
+      <button id="cm-submit-btn" class="btn-filter-trigger btn-primary">Save to Google Calendar</button>
+    </div>
+
+    <div style="border-top:1px solid var(--border-subtle);padding-top:10px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-subtle);margin-bottom:6px">Saved Google Calendar Reminders for this Entity</div>
+      <div id="cm-events-list" class="cal-events-list"></div>
+    </div>
+  </div>
+</div>
+
+<div id="gcal-overview-modal" class="modal" style="z-index:2350">
+  <div class="modal-box cal-modal-box">
+    <div class="note-modal-head">
+      <div>
+        <h2>Google Calendar Reminders</h2>
+        <div id="gco-user" class="note-modal-sub"></div>
+      </div>
+      <button id="gco-close-x" class="btn-kanban" style="font-size:16px" title="Close">✕</button>
+    </div>
+    <div id="gco-list" class="cal-events-list" style="max-height:320px"></div>
+    <div id="gco-msg" class="cal-msg"></div>
+    <div class="modal-actions">
+      <button id="gco-signout" class="btn-filter-trigger" style="color:var(--rose)">Sign out of Google</button>
+      <button id="gco-refresh" class="btn-filter-trigger">Refresh</button>
+      <a id="gco-open-gcal" class="btn-gcal-link" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 Open Google Calendar ↗</a>
+      <span class="spacer"></span>
+      <button id="gco-close" class="btn-filter-trigger btn-primary">Done</button>
+    </div>
+  </div>
+</div>
+
+<div id="cal-confirm-modal" class="modal" style="z-index:2600">
+  <div class="modal-box confirm-modal-box">
+    <h2 id="cc-title">Confirm Calendar Action</h2>
+    <p id="cc-desc"></p>
+    <div id="cc-summary" class="confirm-summary"></div>
+    <div class="modal-actions">
+      <span class="spacer"></span>
+      <button id="cc-cancel" class="btn-filter-trigger">Cancel</button>
+      <button id="cc-confirm" class="btn-filter-trigger btn-primary">Confirm</button>
+    </div>
+  </div>
+</div>
+
 <div id="drawer-overlay" class="drawer-overlay">
   <div class="drawer">
     <div class="drawer-head">
@@ -322,6 +521,8 @@ main{flex:1;display:flex;min-height:0;position:relative}
       <div class="drawer-sub" id="d-uni"></div>
       <div class="drawer-actions">
         <a id="d-apply-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-drawer-pri">Apply / Portal ↗</a>
+        <button id="d-cal-btn" class="btn-drawer-cal">📅 Google Calendar</button>
+        <a id="d-open-gcal-btn" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="btn-drawer-cal-link" title="Open Google Calendar webpage or app">📆 Open Calendar ↗</a>
         <button id="d-note-window-btn" class="btn-drawer-note">📝 Note Window</button>
         <button id="d-remove-stage-btn" class="btn-remove-stage-drawer">🗑 Remove from Stage</button>
       </div>
@@ -783,6 +984,9 @@ const Drawer = {
     const overlay = document.getElementById('drawer-overlay');
     document.getElementById('drawer-close-btn').addEventListener('click', () => this.close());
     overlay.addEventListener('click', e => { if (e.target === overlay) this.close(); });
+    document.getElementById('d-cal-btn').addEventListener('click', () => {
+      if (this.currentRecord) CalendarUI.openForRecord(this.currentRecord);
+    });
     document.getElementById('d-note-window-btn').addEventListener('click', () => {
       if (this.currentRecord) NoteWindow.open(this.currentRecord);
     });
@@ -834,7 +1038,7 @@ const Drawer = {
     document.getElementById('d-uni').textContent = uni ? `${uni.name} · ${uni.city || ''} ${uni.country}` : '';
 
     const applyBtn = document.getElementById('d-apply-btn');
-    const portalUrl = record.applyUrl || record.staffPageUrl || record.phdProgramUrl || record.sourceUrl || record.url || uni?.url;
+    const portalUrl = record.applyUrl || record.staffPageUrl || record.phdProgramUrl || record.url || uni?.url;
     if (portalUrl) { applyBtn.href = portalUrl; applyBtn.style.display = 'inline-flex'; }
     else applyBtn.style.display = 'none';
 
@@ -842,6 +1046,7 @@ const Drawer = {
     const isTracked = !!(entry && entry.status && entry.status !== 'none');
     document.getElementById('d-remove-stage-btn').style.display = isTracked ? 'inline-flex' : 'none';
     document.getElementById('d-note-window-btn').style.display = isTracked ? 'inline-flex' : 'none';
+    document.getElementById('d-open-gcal-btn').href = CalendarUI.calendarUrlForDate(record.deadline || entry?.follow || entry?.interviewDate);
 
     const rw = this.getResearch(record);
     const hasRw = rw && (rw.description || rw.summary || rw.researchAreas?.length || rw.groupsAndSupervisors?.length);
@@ -946,7 +1151,13 @@ const Drawer = {
             <div><label style="font-size:11px;color:#94a3b8;display:block;margin-bottom:2px">Interview Date</label>
               <input type="date" id="input-interview" value="${esc(entry.interviewDate || '')}" style="${dateInput}"></div>
           </div>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <button type="button" id="btn-drawer-add-cal" class="btn-drawer-cal">📅 Add Reminder to Google Calendar</button>
+            <a href="${esc(CalendarUI.calendarUrlForDate(r.deadline || entry.follow || entry.interviewDate))}" target="_blank" rel="noopener noreferrer" class="btn-drawer-cal-link">📆 Open Google Calendar ↗</a>
+          </div>
         </div>`;
+
+      container.querySelector('#btn-drawer-add-cal').addEventListener('click', () => CalendarUI.openForRecord(r));
 
       container.querySelectorAll('.stage-btn').forEach(btn => {
         btn.addEventListener('click', () => Store.updateStage(r.id, btn.dataset.stage));
@@ -1209,6 +1420,473 @@ const AccountManager = {
   }
 };
 
+const CalendarConfirm = {
+  resolver: null,
+
+  init() {
+    const modal = document.getElementById('cal-confirm-modal');
+    document.getElementById('cc-cancel').addEventListener('click', () => this.resolve(false));
+    document.getElementById('cc-confirm').addEventListener('click', () => this.resolve(true));
+    modal.addEventListener('click', e => { if (e.target === modal) this.resolve(false); });
+  },
+
+  ask({ title, description, summary, confirmLabel = 'Confirm', danger = false }) {
+    document.getElementById('cc-title').textContent = title;
+    document.getElementById('cc-desc').textContent = description;
+    document.getElementById('cc-summary').textContent = summary;
+    const btn = document.getElementById('cc-confirm');
+    btn.textContent = confirmLabel;
+    btn.style.background = danger ? 'var(--rose)' : 'var(--primary)';
+    btn.style.borderColor = danger ? 'var(--rose)' : 'var(--primary)';
+    document.getElementById('cal-confirm-modal').classList.add('open');
+    return new Promise(res => { this.resolver = res; });
+  },
+
+  resolve(val) {
+    document.getElementById('cal-confirm-modal').classList.remove('open');
+    if (this.resolver) {
+      const fn = this.resolver;
+      this.resolver = null;
+      fn(val);
+    }
+  }
+};
+
+const CalendarUI = {
+  currentRecord: null,
+  editingEventId: null,
+  needsAuth: true,
+
+  bridge() {
+    return window.GoogleCalendarBridge || null;
+  },
+
+  init() {
+    CalendarConfirm.init();
+    const $ = id => document.getElementById(id);
+
+    const handleSignIn = async () => {
+      const b = this.bridge();
+      if (!b) return;
+      try {
+        await b.googleSignIn();
+        this.syncAuthUI();
+        if (this.currentRecord && $('cal-modal').classList.contains('open')) {
+          this.loadEntityEvents();
+        }
+      } catch (err) {
+        const msg = err?.message || 'Google sign-in failed';
+        if ($('cal-modal').classList.contains('open')) this.setMsg(msg, 'err');
+      }
+    };
+
+    $('gcal-signin-btn').addEventListener('click', handleSignIn);
+    $('cm-signin-btn').addEventListener('click', handleSignIn);
+    $('gcal-connected-btn').addEventListener('click', () => this.openOverview());
+
+    $('cm-close-x').addEventListener('click', () => this.closeModal());
+    $('cm-close-btn').addEventListener('click', () => this.closeModal());
+    $('cal-modal').addEventListener('click', e => { if (e.target === $('cal-modal')) this.closeModal(); });
+    $('cm-allday').addEventListener('change', () => this.toggleTimeFields());
+    $('cm-date').addEventListener('change', () => this.syncOpenCalendarLink());
+    $('cm-cancel-edit').addEventListener('click', () => this.resetFormToDefault());
+    $('cm-submit-btn').addEventListener('click', () => this.handleSubmit());
+
+    $('gco-close-x').addEventListener('click', () => $('gcal-overview-modal').classList.remove('open'));
+    $('gco-close').addEventListener('click', () => $('gcal-overview-modal').classList.remove('open'));
+    $('gcal-overview-modal').addEventListener('click', e => {
+      if (e.target === $('gcal-overview-modal')) $('gcal-overview-modal').classList.remove('open');
+    });
+    $('gco-refresh').addEventListener('click', () => this.loadOverviewEvents());
+    $('gco-signout').addEventListener('click', async () => {
+      const b = this.bridge();
+      if (!b) return;
+      await b.logout();
+      $('gcal-overview-modal').classList.remove('open');
+      this.syncAuthUI();
+    });
+
+    window.addEventListener('phdmap:gcal-auth-changed', () => this.syncAuthUI());
+
+    const bindBridgeAuth = () => {
+      const b = this.bridge();
+      if (!b) return;
+      b.initAuth(
+        () => { this.needsAuth = false; this.syncAuthUI(); },
+        () => { this.needsAuth = true; this.syncAuthUI(); }
+      );
+      this.syncAuthUI();
+    };
+    if (this.bridge()) bindBridgeAuth();
+    else window.addEventListener('load', bindBridgeAuth, { once: true });
+  },
+
+  calendarUrlForDate(yyyyMmDd) {
+    if (yyyyMmDd && /^\d{4}-\d{2}-\d{2}$/.test(yyyyMmDd)) {
+      const [y, m, d] = yyyyMmDd.split('-');
+      return `https://calendar.google.com/calendar/r/day/${y}/${Number(m)}/${Number(d)}`;
+    }
+    return 'https://calendar.google.com';
+  },
+
+  syncOpenCalendarLink() {
+    const el = document.getElementById('cm-open-gcal');
+    if (el) el.href = this.calendarUrlForDate(document.getElementById('cm-date')?.value);
+  },
+
+  syncAuthUI() {
+    const b = this.bridge();
+    const signedIn = b ? b.isSignedIn() : false;
+    this.needsAuth = !signedIn;
+    document.getElementById('gcal-signin-btn').style.display = signedIn ? 'none' : 'inline-flex';
+    document.getElementById('gcal-connected-btn').style.display = signedIn ? 'inline-flex' : 'none';
+    const info = b?.getUserInfo();
+    document.getElementById('gcal-user-label').textContent = info?.email || 'Google Calendar';
+    document.getElementById('cm-auth-banner').style.display = signedIn ? 'none' : 'flex';
+  },
+
+  toggleTimeFields() {
+    const allDay = document.getElementById('cm-allday').checked;
+    document.getElementById('cm-time-wrap').style.display = allDay ? 'none' : 'flex';
+    document.getElementById('cm-dur-wrap').style.display = allDay ? 'none' : 'flex';
+  },
+
+  setMsg(text, cls = '') {
+    const el = document.getElementById('cm-msg');
+    el.textContent = text;
+    el.className = 'cal-msg' + (cls ? ' ' + cls : '');
+  },
+
+  buildDescription(record) {
+    const uni = Utils.getUniversity(record);
+    const portal = record.applyUrl || record.staffPageUrl || record.phdProgramUrl || record.sourceUrl || record.url || uni?.url || '';
+    const note = Store.notes[record.id]?.text || '';
+    return [
+      `Entity: ${record.title || record.name || record.id} (${TYPE_LABEL[record._t] || 'Entity'})`,
+      uni ? `Institution: ${uni.name}${uni.city ? ', ' + uni.city : ''}${uni.country ? ', ' + uni.country : ''}` : '',
+      record.deadline ? `Application Last Date: ${record.deadline}` : '',
+      portal ? `Portal: ${portal}` : '',
+      note ? `\nMy Notes:\n${note}` : '',
+    ].filter(Boolean).join('\n');
+  },
+
+  applyPreset(kind) {
+    const r = this.currentRecord;
+    if (!r) return;
+    const $ = id => document.getElementById(id);
+    const title = r.title || r.name || r.id;
+    const entry = Store.tracker[r.id] || {};
+    const today = new Date();
+    const tomorrow = new Date(today.getTime() + 86400000).toISOString().slice(0, 10);
+
+    document.querySelectorAll('.cal-preset-btn').forEach(b => b.classList.toggle('active', b.dataset.preset === kind));
+
+    if (kind === 'deadline' && r.deadline) {
+      $('cm-summary').value = `Last Date: ${title}`;
+      $('cm-date').value = r.deadline;
+      $('cm-allday').checked = true;
+      $('cm-remind-min').value = '1440';
+      $('cm-remind-method').value = 'both';
+    } else if (kind === 'followup') {
+      $('cm-summary').value = `Follow up: ${title}`;
+      $('cm-date').value = entry.follow || tomorrow;
+      $('cm-allday').checked = false;
+      $('cm-time').value = '09:00';
+      $('cm-duration').value = '30';
+      $('cm-remind-min').value = '30';
+      $('cm-remind-method').value = 'popup';
+    } else if (kind === 'interview') {
+      $('cm-summary').value = `Interview: ${title}`;
+      $('cm-date').value = entry.interviewDate || tomorrow;
+      $('cm-allday').checked = false;
+      $('cm-time').value = '10:00';
+      $('cm-duration').value = '60';
+      $('cm-remind-min').value = '60';
+      $('cm-remind-method').value = 'both';
+    } else {
+      $('cm-summary').value = `Reminder: ${title}`;
+      $('cm-date').value = r.deadline || entry.follow || tomorrow;
+      $('cm-allday').checked = false;
+      $('cm-time').value = '09:00';
+      $('cm-duration').value = '30';
+      $('cm-remind-min').value = '60';
+      $('cm-remind-method').value = 'popup';
+    }
+    $('cm-desc').value = this.buildDescription(r);
+    this.toggleTimeFields();
+    this.syncOpenCalendarLink();
+  },
+
+  resetFormToDefault() {
+    this.editingEventId = null;
+    document.getElementById('cm-submit-btn').textContent = 'Save to Google Calendar';
+    document.getElementById('cm-cancel-edit').style.display = 'none';
+    const r = this.currentRecord;
+    if (!r) return;
+    if (r.deadline) this.applyPreset('deadline');
+    else if (Store.tracker[r.id]?.follow) this.applyPreset('followup');
+    else this.applyPreset('custom');
+  },
+
+  openForRecord(record) {
+    if (!record) return;
+    this.currentRecord = record;
+    this.editingEventId = null;
+    this.setMsg('');
+    this.syncAuthUI();
+
+    const $ = id => document.getElementById(id);
+    const uni = Utils.getUniversity(record);
+    const typeKey = record._t || 'openings';
+    const badge = $('cm-type');
+    badge.textContent = TYPE_LABEL[typeKey] || 'Entity';
+    badge.style.background = Config.markerColors[typeKey] || 'var(--primary)';
+    $('cm-title').textContent = record.title || record.name || record.id;
+    $('cm-sub').textContent = uni ? `${uni.name}${uni.city ? ' · ' + uni.city : ''}${uni.country ? ', ' + uni.country : ''}` : '';
+
+    const presets = [];
+    if (record.deadline) presets.push({ id: 'deadline', label: `📅 Last Date (${record.deadline})` });
+    presets.push({ id: 'followup', label: '⏰ Follow-up Reminder' });
+    presets.push({ id: 'interview', label: '🎤 Interview / Meeting' });
+    presets.push({ id: 'custom', label: '✨ Custom Reminder' });
+
+    const presetEl = $('cm-presets');
+    presetEl.innerHTML = presets.map(p =>
+      `<button type="button" class="cal-preset-btn" data-preset="${p.id}">${Utils.escape(p.label)}</button>`
+    ).join('');
+    presetEl.querySelectorAll('.cal-preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => this.applyPreset(btn.dataset.preset));
+    });
+
+    this.resetFormToDefault();
+    $('cal-modal').classList.add('open');
+    this.loadEntityEvents();
+  },
+
+  closeModal() {
+    document.getElementById('cal-modal').classList.remove('open');
+    this.currentRecord = null;
+    this.editingEventId = null;
+  },
+
+  formatEventWhen(ev) {
+    if (ev.start?.date) return `${ev.start.date} (All-day)`;
+    if (ev.start?.dateTime) return new Date(ev.start.dateTime).toLocaleString();
+    return '';
+  },
+
+  async loadEntityEvents() {
+    const listEl = document.getElementById('cm-events-list');
+    const b = this.bridge();
+    if (!b || !b.isSignedIn() || !this.currentRecord) {
+      listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">Sign in with Google above to view and manage saved Google Calendar reminders for this entity.</div>';
+      return;
+    }
+    listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">Loading calendar reminders…</div>';
+    try {
+      const items = await b.listEntityEvents(this.currentRecord.id);
+      if (!items.length) {
+        listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">No Google Calendar reminders saved for this entity yet.</div>';
+        return;
+      }
+      listEl.innerHTML = items.map(ev => `
+        <div class="cal-event-item" data-ev-id="${Utils.escape(ev.id)}">
+          <div class="cal-event-info">
+            <div class="cal-event-title">${Utils.escape(ev.summary || '(Untitled)')}</div>
+            <div class="cal-event-time">${Utils.escape(this.formatEventWhen(ev))}</div>
+          </div>
+          <div class="cal-event-btns">
+            ${ev.htmlLink ? `<a class="btn-kanban" href="${Utils.escape(ev.htmlLink)}" target="_blank" rel="noopener noreferrer">Open ↗</a>` : ''}
+            <button type="button" class="btn-kanban" data-ev-action="edit" data-ev-id="${Utils.escape(ev.id)}">Edit</button>
+            <button type="button" class="btn-kanban btn-remove-stage" data-ev-action="delete" data-ev-id="${Utils.escape(ev.id)}">Delete</button>
+          </div>
+        </div>`).join('');
+
+      listEl.querySelectorAll('[data-ev-action]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const ev = items.find(x => x.id === btn.dataset.evId);
+          if (!ev) return;
+          if (btn.dataset.evAction === 'edit') this.startEditEvent(ev);
+          else if (btn.dataset.evAction === 'delete') this.confirmDeleteEvent(ev, () => this.loadEntityEvents());
+        });
+      });
+    } catch (err) {
+      this.syncAuthUI();
+      listEl.innerHTML = `<div style="font-size:12px;color:var(--rose)">Could not load reminders: ${Utils.escape(err?.message || 'Error')}</div>`;
+    }
+  },
+
+  startEditEvent(ev) {
+    this.editingEventId = ev.id;
+    document.getElementById('cm-summary').value = ev.summary || '';
+    document.getElementById('cm-desc').value = ev.description || '';
+    if (ev.start?.date) {
+      document.getElementById('cm-allday').checked = true;
+      document.getElementById('cm-date').value = ev.start.date;
+    } else if (ev.start?.dateTime) {
+      document.getElementById('cm-allday').checked = false;
+      const dt = new Date(ev.start.dateTime);
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('cm-date').value = `${dt.getFullYear()}-${pad(dt.getMonth() + 1)}-${pad(dt.getDate())}`;
+      document.getElementById('cm-time').value = `${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+    }
+    this.toggleTimeFields();
+    document.getElementById('cm-submit-btn').textContent = 'Update Google Calendar Event';
+    document.getElementById('cm-cancel-edit').style.display = 'inline-flex';
+  },
+
+  async handleSubmit() {
+    const b = this.bridge();
+    if (!b) return;
+    if (!b.isSignedIn()) {
+      this.setMsg('Please sign in with Google first.', 'err');
+      return;
+    }
+    const $ = id => document.getElementById(id);
+    const summary = $('cm-summary').value.trim();
+    const date = $('cm-date').value;
+    if (!summary || !date) {
+      this.setMsg('Please enter both a reminder title and date.', 'err');
+      return;
+    }
+    const allDay = $('cm-allday').checked;
+    const startTime = $('cm-time').value || '09:00';
+    const durationMinutes = Number($('cm-duration').value || 30);
+    const reminderMinutes = Number($('cm-remind-min').value || 1440);
+    const reminderMethod = $('cm-remind-method').value || 'both';
+    const description = $('cm-desc').value.trim();
+    const uni = Utils.getUniversity(this.currentRecord);
+    const location = uni ? [uni.name, uni.city, uni.country].filter(Boolean).join(', ') : '';
+
+    const isUpdate = Boolean(this.editingEventId);
+    const activePreset = document.querySelector('.cal-preset-btn.active')?.dataset.preset || 'custom';
+    const ok = await CalendarConfirm.ask({
+      title: isUpdate ? 'Update Google Calendar Event?' : 'Add Reminder to Google Calendar?',
+      description: isUpdate
+        ? 'This will modify the existing event in your primary Google Calendar.'
+        : 'This will create a new event and reminder in your primary Google Calendar.',
+      summary: `Title: ${summary}\nWhen: ${allDay ? `${date} (All-day)` : `${date} at ${startTime} (${durationMinutes} min)`}\nNotify: ${reminderMinutes >= 1440 ? `${reminderMinutes / 1440} day(s)` : `${reminderMinutes} min`} before (${reminderMethod})`,
+      confirmLabel: isUpdate ? 'Update Event' : 'Add to Google Calendar',
+    });
+    if (!ok) return;
+
+    const submitBtn = $('cm-submit-btn');
+    submitBtn.disabled = true;
+    this.setMsg(isUpdate ? 'Updating Google Calendar…' : 'Adding to Google Calendar…');
+    try {
+      const payload = {
+        summary,
+        description,
+        location,
+        date,
+        allDay,
+        startTime,
+        durationMinutes,
+        reminderMinutes,
+        reminderMethod,
+        entityId: this.currentRecord.id,
+        entityType: this.currentRecord._t || 'openings',
+        reminderKind: activePreset,
+      };
+      if (isUpdate) await b.updateCalendarEvent(this.editingEventId, payload);
+      else await b.createCalendarEvent(payload);
+
+      this.setMsg(isUpdate ? 'Google Calendar event updated!' : 'Reminder added to Google Calendar!', 'ok');
+      this.resetFormToDefault();
+      await this.loadEntityEvents();
+    } catch (err) {
+      this.syncAuthUI();
+      this.setMsg(err?.message === 'AUTH_EXPIRED' ? 'Session expired — please sign in with Google again.' : (err?.message || 'Failed to save calendar event.'), 'err');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  },
+
+  async confirmDeleteEvent(ev, onDeleted) {
+    const b = this.bridge();
+    if (!b) return;
+    const ok = await CalendarConfirm.ask({
+      title: 'Delete Google Calendar Event?',
+      description: 'Are you sure you want to permanently delete this event from your Google Calendar?',
+      summary: `Event: ${ev.summary || '(Untitled)'}\nWhen: ${this.formatEventWhen(ev)}`,
+      confirmLabel: 'Delete Event',
+      danger: true,
+    });
+    if (!ok) return;
+    try {
+      await b.deleteCalendarEvent(ev.id);
+      if (this.editingEventId === ev.id) this.resetFormToDefault();
+      await onDeleted?.();
+    } catch (err) {
+      this.syncAuthUI();
+      this.setMsg(err?.message || 'Failed to delete event.', 'err');
+    }
+  },
+
+  openOverview() {
+    const info = this.bridge()?.getUserInfo();
+    document.getElementById('gco-user').textContent = info?.email ? `Signed in as ${info.email}` : 'Connected to Google Calendar';
+    document.getElementById('gcal-overview-modal').classList.add('open');
+    this.loadOverviewEvents();
+  },
+
+  async loadOverviewEvents() {
+    const listEl = document.getElementById('gco-list');
+    const msgEl = document.getElementById('gco-msg');
+    msgEl.textContent = '';
+    const b = this.bridge();
+    if (!b || !b.isSignedIn()) {
+      listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">Sign in with Google to view your saved PhD Map reminders.</div>';
+      return;
+    }
+    listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">Loading reminders from Google Calendar…</div>';
+    try {
+      const items = await b.listAllPhdMapEvents();
+      if (!items.length) {
+        listEl.innerHTML = '<div style="font-size:12px;color:var(--text-subtle)">No PhD Map reminders on your Google Calendar yet. Click "📅 Remind Last Date" or "📅 Add Reminder" on any opening, university, or supervisor card.</div>';
+        return;
+      }
+      listEl.innerHTML = items.map(ev => {
+        const entityId = ev.extendedProperties?.private?.phdMapEntityId;
+        const rec = entityId ? Store.byId.get(entityId) : null;
+        return `
+          <div class="cal-event-item">
+            <div class="cal-event-info">
+              <div class="cal-event-title">${Utils.escape(ev.summary || '(Untitled)')}</div>
+              <div class="cal-event-time">${Utils.escape(this.formatEventWhen(ev))}${rec ? ' · ' + Utils.escape(rec.title || rec.name) : ''}</div>
+            </div>
+            <div class="cal-event-btns">
+              ${rec ? `<button type="button" class="btn-kanban" data-ov-open="${Utils.escape(rec.id)}">Entity</button>` : ''}
+              ${ev.htmlLink ? `<a class="btn-kanban" href="${Utils.escape(ev.htmlLink)}" target="_blank" rel="noopener noreferrer">Open ↗</a>` : ''}
+              <button type="button" class="btn-kanban btn-remove-stage" data-ov-del="${Utils.escape(ev.id)}">Delete</button>
+            </div>
+          </div>`;
+      }).join('');
+
+      listEl.querySelectorAll('[data-ov-open]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const rec = Store.byId.get(btn.dataset.ovOpen);
+          if (rec) {
+            document.getElementById('gcal-overview-modal').classList.remove('open');
+            this.openForRecord(rec);
+          }
+        });
+      });
+      listEl.querySelectorAll('[data-ov-del]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const ev = items.find(x => x.id === btn.dataset.ovDel);
+          if (ev) this.confirmDeleteEvent(ev, () => this.loadOverviewEvents());
+        });
+      });
+    } catch (err) {
+      this.syncAuthUI();
+      msgEl.textContent = err?.message || 'Could not load Google Calendar reminders.';
+      msgEl.className = 'cal-msg err';
+      listEl.innerHTML = '';
+    }
+  }
+};
+
 const App = {
   activeTab: 'openings',
   filteredRecords: [],
@@ -1223,6 +1901,7 @@ const App = {
     FilterEngine.init();
     Drawer.init();
     NoteWindow.init();
+    CalendarUI.init();
     AccountManager.init();
     Importer.init();
     this.initTheme();
@@ -1263,13 +1942,24 @@ const App = {
       });
     });
 
-    // One delegated listener for all result cards (and tracked note buttons)
+    // One delegated listener for all result cards (notes & calendar triggers)
     document.getElementById('cards-container').addEventListener('click', e => {
+      if (e.target.closest('.btn-cal-open')) {
+        e.stopPropagation();
+        return;
+      }
       const noteBtn = e.target.closest('.btn-note-trigger');
       if (noteBtn) {
         e.stopPropagation();
         const record = Store.byId.get(noteBtn.dataset.noteId);
         if (record) NoteWindow.open(record);
+        return;
+      }
+      const calBtn = e.target.closest('.btn-cal-trigger');
+      if (calBtn) {
+        e.stopPropagation();
+        const record = Store.byId.get(calBtn.dataset.calId);
+        if (record) CalendarUI.openForRecord(record);
         return;
       }
       const card = e.target.closest('.record-card');
@@ -1384,13 +2074,16 @@ const App = {
         ? `<span class="tag stage-badge">★ ${Utils.escape(stage ? stage.label : stageKey)}</span>` : '';
       const noteBtn = isTracked
         ? `<button type="button" class="btn-note-trigger" data-note-id="${Utils.escape(r.id)}">📝 ${Store.notes[r.id] ? 'Edit Note' : 'Add Note'}</button>` : '';
+      const calBtn = `<button type="button" class="btn-cal-trigger" data-cal-id="${Utils.escape(r.id)}" title="Add last date or custom reminder to Google Calendar">📅 ${r.deadline ? 'Remind Last Date' : 'Add Reminder'}</button>`;
+      const calOpenUrl = CalendarUI.calendarUrlForDate(r.deadline || Store.tracker[r.id]?.follow || Store.tracker[r.id]?.interviewDate);
+      const calOpenBtn = `<a class="btn-cal-open" href="${Utils.escape(calOpenUrl)}" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app">📆 ↗</a>`;
 
       return `
         <div class="record-card" data-id="${Utils.escape(r.id)}">
           <div class="card-title">${Utils.escape(r.title || r.name)}</div>
           <div class="card-uni">🏛 ${uni ? Utils.escape(uni.name) : ''} · ${Utils.escape(uni?.country || '')}</div>
           <div class="tag-row">
-            ${deadline}${stageBadge}${noteBtn}
+            ${deadline}${stageBadge}${noteBtn}${calBtn}${calOpenBtn}
             ${(r.subfields || []).slice(0, 3).map(s => `<span class="tag">${Utils.escape(s)}</span>`).join('')}
           </div>
         </div>`;
@@ -1432,7 +2125,9 @@ const App = {
                 <div class="kanban-actions">
                   <button class="btn-kanban" data-action="details" data-id="${Utils.escape(i.id)}">Details</button>
                   <button class="btn-kanban btn-kanban-notes" data-action="notes" data-id="${Utils.escape(i.id)}" title="Open separate note-taking window">📝 ${Store.notes[i.id] ? 'Note •' : 'Notes'}</button>
-                  <button class="btn-kanban btn-remove-stage" data-action="remove" data-id="${Utils.escape(i.id)}" title="Remove from application stage">🗑 Remove</button>
+                  <button class="btn-kanban btn-kanban-cal" data-action="calendar" data-id="${Utils.escape(i.id)}" title="Add reminder to Google Calendar">📅 Remind</button>
+                  <a class="btn-kanban" href="${Utils.escape(CalendarUI.calendarUrlForDate(i.record.deadline || i.entry.follow || i.entry.interviewDate))}" target="_blank" rel="noopener noreferrer" title="Open Google Calendar webpage or app" style="text-decoration:none;color:var(--primary)">📆↗</a>
+                  <button class="btn-kanban btn-remove-stage" data-action="remove" data-id="${Utils.escape(i.id)}" title="Remove from application stage">🗑</button>
                 </div>
               </div>`).join('')}
           </div>
@@ -1483,6 +2178,9 @@ const App = {
         else if (btn.dataset.action === 'notes') {
           const item = board._tracked.find(i => i.id === id);
           if (item) NoteWindow.open(item.record);
+        } else if (btn.dataset.action === 'calendar') {
+          const item = board._tracked.find(i => i.id === id);
+          if (item) CalendarUI.openForRecord(item.record);
         } else {
           const item = board._tracked.find(i => i.id === id);
           if (item) Drawer.open(item.record);
@@ -1494,5 +2192,6 @@ const App = {
 
 window.addEventListener('DOMContentLoaded', () => App.init());
 </script>
+<script type="module" src="/src/googleCalendar.ts"></script>
 </body>
 </html>
